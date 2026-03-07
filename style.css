@@ -211,11 +211,11 @@ html, body {
     width: 100%;
     height: auto;
     display: block;
-    mix-blend-mode: screen; /* Perfect blending when background is black */
-    filter: brightness(0.5) contrast(1.5); /* Forces dark blue background to black */
-    clip-path: inset(5% 21% 10% 21%); /* Aggressively cuts off all edge artifacts */
-    -webkit-mask-image: radial-gradient(circle, black 20%, transparent 65%);
-    mask-image: radial-gradient(circle, black 20%, transparent 65%);
+    mix-blend-mode: screen; /* Blends dark image background into the page */
+    filter: brightness(0.85) contrast(1.1); /* Slightly darkened to aid blending without turning black */
+    clip-path: inset(0 19% 0 19%); /* Clips out the sidebars precisely */
+    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    mask-image: radial-gradient(circle, black 40%, transparent 80%);
     animation: fadeInUp 1.5s ease-out;
 }
 
