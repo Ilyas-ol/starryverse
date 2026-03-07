@@ -196,78 +196,36 @@ html, body {
 }
 
 /* 3D LOGO REFINEMENT */
-.logo-area-v3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3.5rem;
-    position: relative;
-    z-index: 10;
-}
-
-.logo-3d-wrapper {
-    position: relative;
-    padding: 1.5rem;
-}
-
-.logo-3d {
-    font-family: var(--font-header);
-    font-size: clamp(3.5rem, 14vw, 7.5rem);
-    font-weight: 900;
-    line-height: 0.85;
-    color: #FFFFFF;
-    position: relative;
-    text-align: center;
-    margin: 0;
-    letter-spacing: -0.02em;
-    user-select: none;
-}
-
-.logo-main {
-    position: relative;
-    z-index: 10;
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
-}
-
-.v-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.v-star {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.35em;
-    color: var(--primary-blue);
-    text-shadow: none;
-    z-index: 15;
-}
-
-.logo-layer {
-    position: absolute;
-    top: 6px;
-    left: 0;
+/* HERO BRANDING IMAGE (WELCOME SCREEN) */
+.hero-image-container {
     width: 100%;
-    color: var(--primary-blue);
-    z-index: 5;
-    transform: translateY(2px);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    z-index: 10;
+    transition: var(--transition);
 }
 
-.layer-1 { transform: translateY(8px); opacity: 0.8; z-index: 4; }
-.layer-2 { transform: translateY(16px); opacity: 0.6; z-index: 3; }
+.hero-branding-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 20px rgba(1, 15, 35, 0.4));
+    border-radius: 20px;
+    animation: fadeInUp 1s ease-out;
+}
 
-.tagline-v2 {
-    font-family: var(--font-header);
-    font-size: clamp(1rem, 2.2vw, 1.4rem);
-    font-weight: 700;
-    color: #FFFFFF;
-    letter-spacing: 0.6em;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    opacity: 0.95;
+.welcome-content {
+    text-align: center;
+    position: relative;
+    max-width: 650px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ========================================================================= */
