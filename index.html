@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Atmospheric Background Elements -->
+    <div class="sky-overlay"></div>
+    <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="cloud cloud-4"></div>
+    </div>
+    <div class="celestial-motif"></div>
+
     <!-- Club Logo (fixed top-left) -->
     <a href="#" class="club-logo" title="AstroTech Club">
         <img src="logo.png" alt="AstroTech Club Logo" />
@@ -22,13 +32,16 @@
     <!-- ======================== WELCOME SCREEN ======================== -->
     <section id="welcome-screen" class="screen active">
         <div class="welcome-content">
-            <div class="logo-area">
-                <div class="logo-glow"></div>
-                <h1 class="logo-text">
-                    <span class="logo-starry">STARRY</span>
-                    <span class="logo-verse">VERSE</span>
-                </h1>
-                <p class="tagline">Above the Iftar Table</p>
+            <div class="logo-area-v2">
+                <div class="logo-3d-wrapper">
+                    <h1 class="logo-3d" data-text="STARRY VERSE">
+                        <span class="logo-main">STARRY VERSE</span>
+                        <span class="logo-layer layer-1">STARRY VERSE</span>
+                        <span class="logo-layer layer-2">STARRY VERSE</span>
+                        <span class="logo-layer layer-3">STARRY VERSE</span>
+                    </h1>
+                </div>
+                <div class="tagline-v2">ABOVE THE IFTAR TABLE</div>
             </div>
             <div class="event-badge">
                 <span class="badge-icon">🔭</span>
@@ -39,9 +52,6 @@
                 <span class="btn-text">Launch Quiz</span>
                 <span class="btn-icon">🚀</span>
             </button>
-            <div class="star-decoration star-1">✦</div>
-            <div class="star-decoration star-2">✧</div>
-            <div class="star-decoration star-3">⋆</div>
         </div>
     </section>
 
