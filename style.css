@@ -104,7 +104,7 @@ html, body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ======================== VISUAL IDENTITY OVERHAUL ======================== */
+/* ======================== VISUAL IDENTITY REFINEMENT ======================== */
 
 /* BACKGROUND ELEMENTS */
 .sky-overlay {
@@ -113,108 +113,161 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(1, 57, 135, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(1, 57, 135, 0.2) 0%, transparent 80%);
     pointer-events: none;
     z-index: -1;
 }
 
+.deco-star {
+    position: absolute;
+    color: var(--cream-gold);
+    font-size: 1.2rem;
+    filter: drop-shadow(0 0 10px var(--cream-gold));
+    opacity: 0.6;
+}
+
+.star-fixed-1 { top: 15%; left: 8%; }
+.star-fixed-2 { top: 40%; right: 12%; }
+.star-fixed-3 { bottom: 25%; left: 20%; }
+
+.shooting-star {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    width: 2px;
+    height: 80px;
+    background: linear-gradient(to top, var(--cream-gold), transparent);
+    transform: rotate(45deg);
+    opacity: 0;
+    animation: shoot 8s infinite ease-in;
+}
+
+@keyframes shoot {
+    0% { transform: translate(0, 0) rotate(45deg); opacity: 0; }
+    10% { opacity: 0.8; }
+    20% { transform: translate(-300px, 300px) rotate(45deg); opacity: 0; }
+    100% { opacity: 0; }
+}
+
 .clouds-container {
     position: fixed;
-    bottom: -50px;
+    bottom: -80px;
     left: 0;
     width: 100%;
-    height: 40%;
+    height: 45%;
     pointer-events: none;
     z-index: -1;
 }
 
 .cloud {
     position: absolute;
-    background: rgba(0, 15, 35, 0.85);
+    background: var(--dark-navy);
     border-radius: 100px;
-    filter: blur(20px);
-    animation: floatCloud 20s infinite ease-in-out;
+    filter: blur(5px);
+    border-top: 1px solid rgba(255, 231, 197, 0.05);
+    animation: floatCloud 25s infinite ease-in-out;
 }
 
-.cloud-1 { width: 500px; height: 150px; bottom: 20px; left: -100px; animation-duration: 25s; }
-.cloud-2 { width: 400px; height: 120px; bottom: 60px; right: -80px; animation-duration: 22s; animation-delay: -5s; }
-.cloud-3 { width: 600px; height: 180px; bottom: -40px; left: 20%; animation-duration: 30s; animation-delay: -10s; }
-.cloud-4 { width: 300px; height: 100px; bottom: 100px; right: 25%; animation-duration: 18s; animation-delay: -2s; }
+/* Paper-cut effect clouds */
+.cloud-1 { width: 700px; height: 180px; bottom: 40px; left: -150px; background: rgba(0, 15, 35, 0.95); z-index: 3; }
+.cloud-2 { width: 500px; height: 150px; bottom: 80px; right: -100px; background: rgba(0, 15, 35, 0.8); z-index: 2; animation-delay: -5s; }
+.cloud-3 { width: 800px; height: 220px; bottom: -20px; left: 10%; background: rgba(0, 15, 35, 0.98); z-index: 4; animation-delay: -10s; }
+.cloud-4 { width: 400px; height: 120px; bottom: 120px; right: 20%; background: rgba(0, 15, 35, 0.7); z-index: 1; animation-delay: -15s; }
+.cloud-5 { width: 600px; height: 160px; bottom: 20px; right: 5%; background: rgba(0, 15, 35, 0.9); z-index: 3; animation-delay: -3s; }
 
 @keyframes floatCloud {
     0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(30px, -20px); }
+    50% { transform: translate(40px, -15px); }
 }
 
-/* CELESTIAL MOTIF (OUTLINE FIGURE) */
+/* CELESTIAL GUARDIAN (WINGED MOTIF) */
 .celestial-motif {
     position: fixed;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="rgba(255, 231, 197, 0.15)" stroke-width="0.5"><path d="M50 20 L40 35 L30 35 L20 20 M50 20 L60 35 L70 35 L80 20 M50 20 L50 80 M30 35 L30 80 M70 35 L70 80 M10 40 Q30 50 20 60 M90 40 Q70 50 80 60"/></svg>') no-repeat center;
+    width: 650px;
+    height: 650px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="rgba(255, 231, 197, 0.12)" stroke-width="0.3"><path d="M50 20 L50 85 M50 25 Q30 20 15 40 Q40 35 50 25 Q60 35 85 40 Q70 20 50 25 M35 45 Q20 50 25 70 M65 45 Q80 50 75 70 M45 35 L30 40 M55 35 L70 40 M48 15 L52 15 L52 18 L48 18 Z"/></svg>') no-repeat center;
     background-size: contain;
     pointer-events: none;
     z-index: -1;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
-/* 3D LOGO AREA */
-.logo-area-v2 {
+/* 3D LOGO REFINEMENT */
+.logo-area-v3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
     position: relative;
+    z-index: 10;
 }
 
 .logo-3d-wrapper {
     position: relative;
-    padding: 1rem;
+    padding: 1.5rem;
 }
 
 .logo-3d {
     font-family: var(--font-header);
-    font-size: clamp(3rem, 12vw, 6.5rem);
+    font-size: clamp(3.5rem, 14vw, 7.5rem);
     font-weight: 900;
-    line-height: 0.9;
+    line-height: 0.85;
     color: #FFFFFF;
     position: relative;
     text-align: center;
     margin: 0;
+    letter-spacing: -0.02em;
     user-select: none;
 }
 
 .logo-main {
     position: relative;
-    z-index: 5;
+    z-index: 10;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4));
+}
+
+.v-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.v-star {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.35em;
+    color: var(--primary-blue);
+    text-shadow: none;
+    z-index: 15;
 }
 
 .logo-layer {
     position: absolute;
-    top: 4px;
+    top: 6px;
     left: 0;
     width: 100%;
     color: var(--primary-blue);
-    z-index: 1;
-    filter: drop-shadow(0 0 10px rgba(1, 57, 135, 0.5));
+    z-index: 5;
+    transform: translateY(2px);
 }
 
-.layer-1 { top: 8px; opacity: 0.8; }
-.layer-2 { top: 12px; opacity: 0.6; }
-.layer-3 { top: 16px; opacity: 0.4; }
+.layer-1 { transform: translateY(8px); opacity: 0.8; z-index: 4; }
+.layer-2 { transform: translateY(16px); opacity: 0.6; z-index: 3; }
 
 .tagline-v2 {
     font-family: var(--font-header);
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
-    font-weight: 600;
+    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-weight: 700;
     color: #FFFFFF;
-    letter-spacing: 0.5em;
-    margin-top: 0.5rem;
+    letter-spacing: 0.6em;
+    margin-top: 1rem;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    opacity: 0.95;
 }
 
 /* ========================================================================= */
