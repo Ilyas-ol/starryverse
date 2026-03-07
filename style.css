@@ -21,8 +21,8 @@
     top: 1rem;
     left: 1.2rem;
     z-index: 100;
-    width: 72px;
-    height: 72px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     overflow: hidden;
     transition: var(--transition);
@@ -200,7 +200,7 @@ html, body {
 /* HERO BRANDING IMAGE (WELCOME SCREEN) */
 .hero-image-container {
     width: 100%;
-    max-width: 750px;
+    max-width: 850px;
     margin: 0 auto 1.5rem;
     position: relative;
     z-index: 10;
@@ -211,11 +211,11 @@ html, body {
     width: 100%;
     height: auto;
     display: block;
-    mix-blend-mode: screen; /* Blends dark image background into the page */
-    filter: brightness(0.85) contrast(1.1); /* Slightly darkened to aid blending without turning black */
-    clip-path: inset(2% 19% 2% 19%); /* Clips out the sidebars precisely */
-    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
-    mask-image: radial-gradient(circle, black 30%, transparent 75%);
+    mix-blend-mode: screen; /* Seamlessly blends image background into page */
+    filter: brightness(0.9) contrast(1.1); /* Keeps logo bright while aiding blend */
+    clip-path: inset(5% 22% 8% 22%); /* Aggressively removes sidebars and edge artifacts */
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 65%);
+    mask-image: radial-gradient(circle, black 30%, transparent 65%);
     animation: fadeInUp 1.5s ease-out;
 }
 
@@ -463,11 +463,11 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Start from top to maximize visible space */
     width: 100%;
     height: 100%;
-    padding: 6rem 1.5rem 2rem;
-    gap: 1.2rem;
+    padding: 4.5rem 1.5rem 1rem; /* Reduced top/bottom padding */
+    gap: 0.8rem; /* Tighter gap between elements */
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 231, 197, 0.2) transparent;
@@ -510,11 +510,11 @@ html, body {
     border: none;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-radius: 24px;
-    padding: 2rem;
+    border-radius: 20px;
+    padding: 1.25rem; /* More compact padding */
     text-align: center;
     width: 100%;
-    max-width: 560px;
+    max-width: 520px;
     animation: cardSlideIn 0.5s ease-out;
 }
 
@@ -550,10 +550,10 @@ html, body {
 }
 
 #constellation-canvas {
-    width: 100%;
-    max-width: 500px;
+    flex: 1;
+    max-width: 480px;
     height: auto;
-    aspect-ratio: 500 / 440;
+    aspect-ratio: 500 / 360; /* Shorter aspect ratio to save vertical space */
     border-radius: 12px;
     background: radial-gradient(ellipse at center, rgba(0, 15, 35, 0.8) 0%, var(--dark-navy) 100%);
     display: block;
@@ -584,9 +584,9 @@ html, body {
 .answers-container {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+    gap: 0.65rem; /* Tighter gap between buttons */
     width: 100%;
-    max-width: 560px;
+    max-width: 520px;
 }
 
 .answer-btn {
@@ -599,7 +599,7 @@ html, body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 14px;
-    padding: 1rem 1.4rem;
+    padding: 0.75rem 1.25rem; /* More compact button padding */
     cursor: pointer;
     transition: var(--transition);
     text-align: left;
