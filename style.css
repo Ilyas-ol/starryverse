@@ -21,8 +21,8 @@
     top: 1rem;
     left: 1.2rem;
     z-index: 100;
-    width: 48px;
-    height: 48px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     overflow: hidden;
     transition: var(--transition);
@@ -200,7 +200,7 @@ html, body {
 /* HERO BRANDING IMAGE (WELCOME SCREEN) */
 .hero-image-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 750px;
     margin: 0 auto 1.5rem;
     position: relative;
     z-index: 10;
@@ -213,9 +213,9 @@ html, body {
     display: block;
     mix-blend-mode: screen; /* Blends dark image background into the page */
     filter: brightness(0.85) contrast(1.1); /* Slightly darkened to aid blending without turning black */
-    clip-path: inset(0 19% 0 19%); /* Clips out the sidebars precisely */
-    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 80%);
-    mask-image: radial-gradient(circle, black 40%, transparent 80%);
+    clip-path: inset(2% 19% 2% 19%); /* Clips out the sidebars precisely */
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
+    mask-image: radial-gradient(circle, black 30%, transparent 75%);
     animation: fadeInUp 1.5s ease-out;
 }
 
