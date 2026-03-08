@@ -51,7 +51,8 @@
 html, body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: var(--font-body);
     background: var(--dark-navy);
     color: var(--cream-gold);
@@ -71,11 +72,11 @@ html, body {
 
 /* ===== SCREENS ===== */
 .screen {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -398,7 +399,7 @@ html, body {
 
 /* ===== QUIZ SCREEN ===== */
 .quiz-header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -408,6 +409,8 @@ html, body {
     padding: 1rem 1.5rem;
     z-index: 10;
     background: linear-gradient(180deg, var(--dark-navy) 0%, transparent 100%);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .progress-info {
@@ -466,8 +469,8 @@ html, body {
     justify-content: flex-start; /* Start from top to maximize visible space */
     width: 100%;
     height: 100%;
-    padding: 4.5rem 1.5rem 1rem; /* Reduced top/bottom padding */
-    gap: 0.8rem; /* Tighter gap between elements */
+    padding: 3.5rem 1rem 0.5rem; /* Ultra-compact padding */
+    gap: 0.5rem; /* Minimal gap */
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 231, 197, 0.2) transparent;
@@ -545,15 +548,15 @@ html, body {
 .canvas-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 440px; /* Narrower for height efficiency */
     margin: 0 auto;
 }
 
 #constellation-canvas {
     flex: 1;
-    max-width: 480px;
+    max-width: 440px;
     height: auto;
-    aspect-ratio: 500 / 360; /* Shorter aspect ratio to save vertical space */
+    aspect-ratio: 500 / 320; /* Even shorter aspect ratio */
     border-radius: 12px;
     background: radial-gradient(ellipse at center, rgba(0, 15, 35, 0.8) 0%, var(--dark-navy) 100%);
     display: block;
@@ -584,9 +587,9 @@ html, body {
 .answers-container {
     display: flex;
     flex-direction: column;
-    gap: 0.65rem; /* Tighter gap between buttons */
+    gap: 0.5rem; /* Minimal gap */
     width: 100%;
-    max-width: 520px;
+    max-width: 440px;
 }
 
 .answer-btn {
@@ -598,8 +601,8 @@ html, body {
     border: none;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-radius: 14px;
-    padding: 0.75rem 1.25rem; /* More compact button padding */
+    border-radius: 12px;
+    padding: 0.6rem 1rem; /* Ultra-compact button padding */
     cursor: pointer;
     transition: var(--transition);
     text-align: left;
@@ -846,22 +849,36 @@ html, body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
+    .club-logo {
+        width: 60px;
+        height: 60px;
+        top: 0.5rem;
+        left: 0.5rem;
+    }
     .logo-starry { font-size: 2.4rem; }
     .logo-verse { font-size: 2.8rem; }
     .tagline { font-size: 0.85rem; letter-spacing: 0.15em; }
     .welcome-desc { font-size: 0.9rem; }
     .btn-primary { padding: 0.85rem 2rem; font-size: 0.85rem; }
     .constellation-card { padding: 1rem; }
-    #constellation-canvas { max-width: 100%; }
+    #constellation-canvas { max-width: 100%; height: auto;}
     .results-title { font-size: 1.4rem; }
     .final-score-num { font-size: 2rem; }
+    .screen {
+        justify-content: flex-start;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+    }
+    .quiz-body {
+        padding-top: 1rem;
+    }
 }
 
 @media (max-width: 380px) {
     .logo-starry { font-size: 2rem; }
     .logo-verse { font-size: 2.4rem; }
     .welcome-content { padding: 1rem; }
-    .quiz-body { padding: 4rem 1rem 1rem; gap: 0.8rem; }
+    .quiz-body { padding: 1rem 1rem 1rem; gap: 0.8rem; }
 }
 
 @media (min-width: 768px) {
